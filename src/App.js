@@ -1,11 +1,13 @@
+import "./App.css";
+import Navbar from "./component/Navbar/Navbar";
+import UsersPage from "./component/UsersPage.jsx/UsersPage";
 
-import './App.css';
-import Navbar from './component/Navbar/Navbar';
 function App() {
   return (
-   <>
-   <Navbar/>
-   </>
+    <>
+      <Navbar />
+      <UsersPage />
+    </>
   );
 }
 
