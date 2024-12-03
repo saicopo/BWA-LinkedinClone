@@ -5,7 +5,6 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import "./navbar.css";
 
 function BasicExample() {
   return (
@@ -31,30 +30,30 @@ function BasicExample() {
               </div>
             </Nav.Link>
             <Nav.Link>
-            <div className=" d-flex flex-column align-items-center">
-              <i class="bi bi-people-fill h4"></i>
-              <p>Rete</p>
+              <div className=" d-flex flex-column align-items-center">
+                <i class="bi bi-people-fill h4"></i>
+                <p>Rete</p>
               </div>
             </Nav.Link>
             <Nav.Link>
-            <div className=" d-flex flex-column align-items-center">
-              <i class="bi bi-suitcase-lg h4"></i>
-              <p>Lavoro</p>
+              <div className=" d-flex flex-column align-items-center">
+                <i class="bi bi-suitcase-lg h4"></i>
+                <p>Lavoro</p>
               </div>
             </Nav.Link>
             <Nav.Link>
-            <div className=" d-flex flex-column align-items-center">
-              <i class="bi bi-chat-dots h4"></i>
-              <p>Messagistica</p>
+              <div className=" d-flex flex-column align-items-center">
+                <i class="bi bi-chat-dots h4"></i>
+                <p>Messagistica</p>
               </div>
             </Nav.Link>
             <Nav.Link>
-            <div className=" d-flex flex-column align-items-center">
-              <i class="bi bi-bell h4"></i>
-              <p>Notifiche</p>
+              <div className=" d-flex flex-column align-items-center">
+                <i class="bi bi-bell h4"></i>
+                <p>Notifiche</p>
               </div>
             </Nav.Link>
-            
+
             <Nav.Link>
               <img
                 src="https://picsum.photos/25/25"
