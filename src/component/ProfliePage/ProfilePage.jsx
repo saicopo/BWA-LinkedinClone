@@ -8,10 +8,10 @@ const API_TOKEN =
 export default function ProfilePage() {
   const params = useParams();
 
-  const [profileDetails, setProfileDetails] = useState(null);
+  const [profileDetails, setProfileDetails] = useState([]);
 
   useEffect(() => {
-    fetch(API_PROFILE_URL + params, {
+    fetch(API_PROFILE_URL + params.id, {
       headers: {
         Authorization: API_TOKEN,
       },

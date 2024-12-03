@@ -9,22 +9,18 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Importo i componenti utilizzati
 import Navbar from "./component/Navbar/Navbar";
-
+import UsersPage from "./component/UsersPage.jsx/UsersPage";
 import Footer from "./component/Footer/Footer";
-import ProfileDetails from "./component/ProfileDetails/ProfileDetails";
+import ProfilePage from "./component/ProfliePage/ProfilePage";
 
 function App() {
   return (
     <Router>
       <Navbar />
-<<<<<<< HEAD
-      <ProfileDetails />
-=======
       <Routes>
         <Route path="/" element={<UsersPage />} />
-        <Route path="/profile/:id" element={} />
+        <Route path="/profile/:id" element={<ProfilePage />} />
       </Routes>
->>>>>>> 6f4d88a84a8494398bf26f834a44b9d12d53b825
       <Footer />
     </Router>
   );

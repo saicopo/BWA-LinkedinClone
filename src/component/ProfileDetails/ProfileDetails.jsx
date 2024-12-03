@@ -23,13 +23,13 @@ export default function ProfileDetails({ data }) {
           </div>
           <Card.Body className="">
             <Card.Title className="mb-1">
-              {/* {data.name} {data.surname} */} Test
+              {data.name} {data.surname}
             </Card.Title>
             <Card.Subtitle className="text-muted mb-2">
-              {/* {data.title} */} Operaio
+              {data.title}
             </Card.Subtitle>
             <Card.Text>
-              <strong>{/* {data.area} */} Treviso</strong> ·{" "}
+              <strong>{data.area}</strong>
               <a href="/">Informazioni di contatto</a>
               <br />
               <span>troppi follower · troppi collegamenti</span>

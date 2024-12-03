@@ -2,71 +2,12 @@ import React from "react";
 
 //style import
 import "./Footer.css";
+import { Container } from "react-bootstrap";
 
 //Importo i
 
-
 const Footer = () => {
   return (
-<<<<<<< HEAD
-    <footer className="m-3">
-      <div className="row">
-        <div className="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
-          <ul className="nav flex-column">
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Informazioni
-              </a>
-            </li>
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Informativa sulla community professionale
-              </a>
-            </li>
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Privacy e condizioni
-              </a>
-            </li>
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Sales Solutions
-              </a>
-            </li>
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Centro sicurezza
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
-          <ul className="nav flex-column">
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Accessibilità
-              </a>
-            </li>
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Carriera
-              </a>
-            </li>
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Opzioni per gli annunci pubblicitari
-              </a>
-            </li>
-            <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
-                Mobile
-              </a>
-            </li>
-          </ul>
-=======
     <Container>
       <footer className="m-3">
         <div className="row">
@@ -134,7 +75,7 @@ const Footer = () => {
               </li>
               <li className="nav-item mb-2">
                 <a href="/" className="nav-link p-0 text-body-secondary">
-                Soluzioni di marketing
+                  Soluzioni di marketing
                 </a>
               </li>
               <li className="nav-item mb-2">
@@ -144,10 +85,10 @@ const Footer = () => {
               </li>
               <li className="nav-item mb-2">
                 <a href="/" className="nav-link p-0 text-body-secondary">
-                Piccole imprese
+                  Piccole imprese
                 </a>
               </li>
-                </ul>
+            </ul>
           </div>
 
           <div className="col-md-5 offset-md-1 mb-3">
@@ -170,7 +111,6 @@ const Footer = () => {
 
         <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
           <p>LinkedIn Corporation © 2024</p>
->>>>>>> 7552ca5d9681a6b6d6344f21cd4cc59001578087
         </div>
 
         <div className="col-6 col-md-2 mb-3">
@@ -224,12 +164,12 @@ const Footer = () => {
             </div>
           </form>
         </div>
-      </div>
 
-      <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-        <p>© 2024 Company, Inc. All rights reserved.</p>
-      </div>
-    </footer>
+        <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Company, Inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </Container>
   );
 };
 
