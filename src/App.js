@@ -8,12 +8,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./component/Navbar/Navbar";
 import UsersPage from "./component/UsersPage.jsx/UsersPage";
 import Footer from "./component/Footer/Footer";
+import Body from "./component/Account/Body/Body";
 
 function App() {
   return (
     <>
       <Navbar />
-      <UsersPage />
+      <Body/>
       <Footer />
     </>
   );
