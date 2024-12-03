@@ -17,7 +17,8 @@ function BasicExample() {
             </span>
 
             <Form>
-              <input placeholder="Cerca"></input>
+           
+              <input type="text" placeholder="Cerca"></input>
             </Form>
           </Col>
 
