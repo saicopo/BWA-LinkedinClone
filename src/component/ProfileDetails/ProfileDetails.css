@@ -1,0 +1,35 @@
+.profile-card {
+  border-radius: 10px;
+}
+
+.profile-card-header {
+  height: 250px;
+  object-fit: cover;
+}
+
+.avatar-container {
+  position: relative;
+  top: -100px;
+  left: -350px;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar-image {
+  width: 200px;
+  height: 200px;
+  border: 3px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card .card-body {
+  margin-top: -100px;
+}
+
+.profile-card .card-footer {
+  font-size: 0.85rem;
+}

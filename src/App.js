@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import UsersPage from "./component/UsersPage/UsersPage";
 import Footer from "./component/Footer/Footer";
+import ProfilePage from "./component/ProfliePage/ProfilePage";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<UsersPage />} />
-        <Route path="/profile/:id" element={} />
+        <Route path="/profile/:id" element={<ProfilePage />} />
       </Routes>
       <Footer />
     </Router>
