@@ -55,7 +55,7 @@ import "./Aside.css"
               <Col md={8}>
               <Card.Body className='p-0'>
                 <Card.Title style={{ fontSize: '13px' }}>{user.name} {user.surname}</Card.Title>
-                <Card.Text style={{ fontSize: '12px' }}>{user.title || 'Nessun ruolo specificato'}</Card.Text>
+                <Card.Text className='mb-1' style={{ fontSize: '12px' }}>{user.title || ''}</Card.Text>
                 <Button variant="primary" size="sm" >Collegati</Button>
               </Card.Body>
               </Col>
