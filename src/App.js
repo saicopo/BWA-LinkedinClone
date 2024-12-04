@@ -12,16 +12,19 @@ import UsersPage from "./component/UsersPage/UsersPage";
 import Footer from "./component/Footer/Footer";
 import ProfilePage from "./component/ProfliePage/ProfilePage";
 import NavBar2 from "./component/Navbar/NavBar2";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
     <Router>
-      <NavBar2 />
-      <Routes>
-        <Route path="/" element={<UsersPage />} />
-        <Route path="/profile/:id" element={<ProfilePage />} />
-      </Routes>
-      <Footer />
+      <Container className="mycontainer">
+        <NavBar2 />
+        <Routes>
+          <Route path="/" element={<UsersPage />} />
+          <Route path="/profile/:id" element={<ProfilePage />} />
+        </Routes>
+        <Footer />
+      </Container>
     </Router>
   );
 }

@@ -38,13 +38,12 @@ export default function ProfilePage() {
     <>
       <Container>
         <Row>
-          <Col md={9} className>
+          <Col lg={9} md={8}>
             <ProfileDetails data={profileDetails} />
-
             <h5>Esperienza</h5>
             <Body id={params.id} />
           </Col>
-          <Col md={3}>
+          <Col lg={3} md={4} className="d-none d-md-block">
             <Aside />
           </Col>
         </Row>
