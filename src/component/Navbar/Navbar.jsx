@@ -5,8 +5,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { NavLink } from "react-router-dom";
 
-function BasicExample() {
+export default function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -17,20 +18,19 @@ function BasicExample() {
             </span>
 
             <Form>
-           
               <input type="text" placeholder="Cerca"></input>
             </Form>
           </Col>
 
-          <Col className="d-flex align-items-center justify-content-around col-9 ">
-            <Nav.Link>
+          <Col className="d-flex align-items-center justify-content-around col-9">
+            <NavLink to="/" className={"nav-link"}>
               <div className=" d-flex flex-column align-items-center">
                 <i class="bi bi-house h4"></i>
                 <p>Home</p>
               </div>
-            </Nav.Link>
+            </NavLink>
             <Nav.Link>
-              <div className=" d-flex flex-column align-items-center">
+              <div className="d-flex flex-column align-items-center">
                 <i class="bi bi-people-fill h4"></i>
                 <p>Rete</p>
               </div>
@@ -77,5 +77,3 @@ function BasicExample() {
     </Navbar>
   );
 }
-
-export default BasicExample;

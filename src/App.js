@@ -8,15 +8,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Importo i componenti utilizzati
-import Navbar from "./component/Navbar/Navbar";
 import UsersPage from "./component/UsersPage/UsersPage";
 import Footer from "./component/Footer/Footer";
 import ProfilePage from "./component/ProfliePage/ProfilePage";
+import NavBar2 from "./component/Navbar/NavBar2";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <NavBar2 />
       <Routes>
         <Route path="/" element={<UsersPage />} />
         <Route path="/profile/:id" element={<ProfilePage />} />
