@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Importo i componenti utilizzati
 import Navbar from "./component/Navbar/Navbar";
-import UsersPage from "./component/UsersPage.jsx/UsersPage";
+import UsersPage from "./component/UsersPage/UsersPage";
 import Footer from "./component/Footer/Footer";
 
 function App() {
