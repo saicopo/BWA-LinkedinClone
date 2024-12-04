@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProfileDetails from "../ProfileDetails/ProfileDetails";
+import Aside from "../Account/Aside/Aside";
 import { Col, Container, Row } from "react-bootstrap";
 const API_PROFILE_URL = "https://striveschool-api.herokuapp.com/api/profile/";
 const API_TOKEN =
@@ -37,6 +38,9 @@ export default function ProfilePage() {
         <Row>
           <Col md={9}>
             <ProfileDetails data={profileDetails} />
+          </Col>
+          <Col md={3}>
+            <Aside />
           </Col>
         </Row>
       </Container>
