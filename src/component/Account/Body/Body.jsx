@@ -41,11 +41,15 @@ const Body = ({ id }) => {
     return <p>Loading...</p>;
   }
   return (
-    <Container>
-      <Row className="mt-5">
+    <Container className="p-0">
+      <Row>
         <Col>
           {experiences.map((experience) => (
-            <ExperienceDiv id={id} key={experience._id} experience={experience} />
+            <ExperienceDiv
+              id={id}
+              key={experience._id}
+              experience={experience}
+            />
           ))}
         </Col>
       </Row>

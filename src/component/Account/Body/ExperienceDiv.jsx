@@ -148,7 +148,7 @@ export default function ExperienceDiv({ experience, id }) {
         </Modal.Footer>
       </Modal>
 
-      <Container className="container-experience shadow">
+      <Container className="container-experience shadow mb-2">
         <Button type="button" className="add-experience" onClick={handleShow}>
           +
         </Button>
