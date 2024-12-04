@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "./ProfileDetails.css";
+
 export default function ProfileDetails({ data }) {
   return (
     <>
