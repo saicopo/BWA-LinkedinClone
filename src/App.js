@@ -3,7 +3,7 @@ import "./App.css";
 
 // Importo lo stile di react-bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Navbar from "./component/Navbar/Navbar"
 // Importo il BrowserRoute da react-router-dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -11,20 +11,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UsersPage from "./component/UsersPage/UsersPage";
 import Footer from "./component/Footer/Footer";
 import ProfilePage from "./component/ProfliePage/ProfilePage";
-import NavBar2 from "./component/Navbar/NavBar2";
-import { Container } from "react-bootstrap";
 
 function App() {
   return (
     <Router>
-      <Container className="mycontainer">
-        <NavBar2 />
-        <Routes>
-          <Route path="/" element={<UsersPage />} />
-          <Route path="/profile/:id" element={<ProfilePage />} />
-        </Routes>
-        <Footer />
-      </Container>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<UsersPage />} />
+        <Route path="/profile/:id" element={<ProfilePage />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
