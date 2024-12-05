@@ -11,9 +11,9 @@ import "./NavBar2.css";
 
 export default function NavBar2() {
   return (
-    <Navbar bg="light">
+    <Navbar bg="light" className="fixed-top">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <i className="bi bi-linkedin text-primary fs-1"></i>
         </Navbar.Brand>
         <Form className="d-flex align-items-center w-50">
@@ -64,7 +64,6 @@ export default function NavBar2() {
           <Dropdown className="text-center mx-3">
             <Dropdown.Toggle
               variant="light"
-              id="dropdown-tu"
               className="border-0 bg-transparent d-flex flex-column align-items-center"
             >
               <i className="bi bi-person-circle fs-4"></i>
@@ -72,7 +71,6 @@ export default function NavBar2() {
                 Tu <i className="bi bi-chevron-down ms-1"></i>
               </div>
             </Dropdown.Toggle>
-
             <Dropdown.Menu>
               <Dropdown.Item>Il tuo profilo</Dropdown.Item>
               <Dropdown.Item>Impostazioni</Dropdown.Item>
@@ -83,7 +81,6 @@ export default function NavBar2() {
           <Dropdown className="text-center mx-3 d-none d-md-block">
             <Dropdown.Toggle
               variant="light"
-              id="dropdown-business"
               className="border-0 bg-transparent d-flex flex-column align-items-center"
             >
               <i className="bi bi-grid fs-4"></i>
