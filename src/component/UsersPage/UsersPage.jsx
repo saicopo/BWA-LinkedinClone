@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-import FemaleImg from "../assets/img/female.png";
-import MaleImg from "../assets/img/male.png";
+import FemaleImg from "../../assets/img/female.png";
+import MaleImg from "../../assets/img/male.png";
 import { Link } from "react-router-dom";
 
 export default function UsersPage() {
@@ -14,7 +14,7 @@ export default function UsersPage() {
   };
 
   return (
-    <Container>
+    <Container className="mt-5 pt-2">
       <Row className="text-center mt-5 g-5 vh-75">
         <Col xs={12} md={6}>
           <Link to={`/profile/${usersID.jessica}`}>

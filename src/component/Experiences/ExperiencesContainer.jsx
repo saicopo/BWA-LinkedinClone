@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-
 // Importo i stili di react-bootstrap
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
-import ExperienceDiv from "./ExperienceDiv";
+import Experience from "./Experience";
 
-const Body = ({ id }) => {
-  const [experiences, setExperience] = useState([]);
+const ExperiencesContainer = ({ id }) => {
+  const [experiences, setExperiences] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [reload, setReload] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -20,6 +19,8 @@ const Body = ({ id }) => {
     description: "",
     area: "",
   });
+
+  const API_EXP_URL = `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`;
 
   const users = [
     {
@@ -52,77 +53,61 @@ const Body = ({ id }) => {
   for (let i = 0; i < users.length; i++) {
     if (id === users[i].id) {
       apiToken = users[i].token;
-      console.log(apiToken);
     }
   }
 
-  const getExperience = async () => {
+  const getExperiences = async () => {
     try {
-      const response = await fetch(
-        ` https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
-        {
-          headers: {
-            Authorization: apiToken,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(API_EXP_URL, {
+        headers: {
+          Authorization: apiToken,
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Errore nel recuperare le esperienze");
+      }
       const data = await response.json();
-
-      setExperience(data);
+      setExperiences(data);
     } catch (error) {
-      console.error("Errore ", error);
+      console.error(error);
     } finally {
       setLoading(false);
+      setReload(false);
     }
   };
 
-  useEffect(() => {
-    getExperience(); // Chiamata alla funzione per recuperare gli utenti
-  }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  function postExperience() {
-    console.log(id);
-    fetch(
-      `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
-      {
+  const postExperience = async () => {
+    try {
+      const response = await fetch(API_EXP_URL, {
         method: "POST",
         headers: {
           Authorization: apiToken,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(inputs),
-      }
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Errore nel caricare le esperienze");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Dati mandati correttamente", data);
-      })
-      .catch((err) => {
-        console.error(err);
       });
-  }
+      if (!response.ok) {
+        throw new Error("Errore nell'aggiunta dell'esperienza");
+      }
+      setReload(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  function handleChange(e) {
+  useEffect(() => {
+    getExperiences();
+  }, [reload]);
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setInputs((prevInputs) => ({
-      ...prevInputs,
-      [name]: value,
-    }));
-  }
+    setInputs((prev) => ({ ...prev, [name]: value }));
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postExperience();
+    await postExperience();
     setShow(false);
     setInputs({
       role: "",
@@ -132,7 +117,9 @@ const Body = ({ id }) => {
       description: "",
       area: "",
     });
-  }
+  };
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>
@@ -205,16 +192,16 @@ const Body = ({ id }) => {
       <Container className="p-0">
         <Row>
           <Col>
-            <h5 className="mx-2 my-3 mt-5">Esperienze Lavorative</h5>
-            <Button
-              type="button"
-              className="add-experience"
-              onClick={handleShow}
-            >
-              +
-            </Button>
+            <Col className="d-flex justify-content-between align-items-center">
+              <h5 className="m-3">Esperienze Lavorative</h5>
+              <Button className="mx-4" type="button" onClick={handleShow}>
+                <i className="bi bi-plus"></i>
+              </Button>
+            </Col>
             {experiences.map((experience) => (
-              <ExperienceDiv
+              <Experience
+                setReload={setReload}
+                apiToken={apiToken}
                 id={id}
                 key={experience._id}
                 experience={experience}
@@ -226,4 +213,5 @@ const Body = ({ id }) => {
     </>
   );
 };
-export default Body;
+
+export default ExperiencesContainer;

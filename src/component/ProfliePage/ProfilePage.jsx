@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProfileDetails from "../ProfileDetails/ProfileDetails";
-import Aside from "../Account/Aside/Aside";
+import Aside from "../Aside/Aside";
 import { Col, Container, Row } from "react-bootstrap";
-import Body from "../Account/Body/Body";
+import ExperiencesContainer from "../Experiences/ExperiencesContainer";
 
 const API_PROFILE_URL = "https://striveschool-api.herokuapp.com/api/profile/";
 const API_TOKEN =
@@ -36,11 +36,11 @@ export default function ProfilePage() {
 
   return (
     <>
-      <Container>
+      <Container className="mt-5 pt-2">
         <Row>
           <Col lg={9} md={8}>
             <ProfileDetails data={profileDetails} />
-            <Body id={params.id} />
+            <ExperiencesContainer id={params.id} />
           </Col>
           <Col lg={3} md={4} className="d-none d-md-block">
             <Aside />

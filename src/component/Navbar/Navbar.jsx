@@ -1,78 +1,101 @@
 import React from "react";
-import { Col, Form, Row } from "react-bootstrap";
-
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { NavLink } from "react-router-dom";
+import {
+  Navbar,
+  Nav,
+  Dropdown,
+  Form,
+  FormControl,
+  Container,
+} from "react-bootstrap";
+import "./NavBar.css";
 
 export default function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar bg="light" className="fixed-top">
       <Container>
-        <Row className="justify-content-start w-100">
-          <Col className="d-flex align-items-center col-3">
-            <span>
-              <i class="bi bi-linkedin h2 me-2 text-primary "></i>
-            </span>
-
-            <Form>
-              <input type="text" placeholder="Cerca"></input>
-            </Form>
-          </Col>
-
-          <Col className="d-flex align-items-center justify-content-around col-9">
-            <NavLink to="/" className={"nav-link"}>
-              <div className=" d-flex flex-column align-items-center">
-                <i class="bi bi-house h4"></i>
-                <p>Home</p>
-              </div>
-            </NavLink>
+        <Navbar.Brand href="/">
+          <i className="bi bi-linkedin text-primary fs-1"></i>
+        </Navbar.Brand>
+        <Form className="d-flex align-items-center w-50">
+          <FormControl
+            type="search"
+            placeholder="Cerca"
+            className="form-control d-none d-xl-block"
+            aria-label="Search"
+          />
+          <Nav.Item className="d-xl-none mx-3">
             <Nav.Link>
-              <div className="d-flex flex-column align-items-center">
-                <i class="bi bi-people-fill h4"></i>
-                <p>Rete</p>
-              </div>
+              <i className="bi bi-search fs-4"></i>
+              <div className="small d-none d-lg-block">Cerca</div>
             </Nav.Link>
+          </Nav.Item>
+        </Form>
+        <Nav className=" d-flex align-items-center">
+          <Nav.Item className="text-center mx-3">
+            <Nav.Link href="/">
+              <i className="bi bi-house-door fs-4"></i>
+              <div className="small d-none d-lg-block">Home</div>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item className="text-center mx-3">
             <Nav.Link>
-              <div className=" d-flex flex-column align-items-center">
-                <i class="bi bi-suitcase-lg h4"></i>
-                <p>Lavoro</p>
-              </div>
+              <i className="bi bi-people fs-4"></i>
+              <div className="small d-none d-lg-block">Rete</div>
             </Nav.Link>
+          </Nav.Item>
+          <Nav.Item className="text-center mx-3">
             <Nav.Link>
-              <div className=" d-flex flex-column align-items-center">
-                <i class="bi bi-chat-dots h4"></i>
-                <p>Messagistica</p>
-              </div>
+              <i className="bi bi-briefcase fs-4"></i>
+              <div className="small d-none d-lg-block">Lavoro</div>
             </Nav.Link>
+          </Nav.Item>
+          <Nav.Item className="text-center mx-3">
             <Nav.Link>
-              <div className=" d-flex flex-column align-items-center">
-                <i class="bi bi-bell h4"></i>
-                <p>Notifiche</p>
-              </div>
+              <i className="bi bi-chat-dots fs-4"></i>
+              <div className="small d-none d-lg-block">Messaggistica</div>
             </Nav.Link>
-
+          </Nav.Item>
+          <Nav.Item className="text-center mx-3">
             <Nav.Link>
-              <img
-                src="https://picsum.photos/25/25"
-                className="rounded-circle mt-2"
-                alt="img-profile"
-              />
-              <div className="d-flex">
-                <p className="me-1 fs-6">TU</p>
-                <NavDropdown>
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                </NavDropdown>
+              <i className="bi bi-bell fs-4"></i>
+              <div className="small d-none d-lg-block">Notifiche</div>
+            </Nav.Link>
+          </Nav.Item>
+          <Dropdown className="text-center mx-3">
+            <Dropdown.Toggle
+              variant="light"
+              className="border-0 bg-transparent d-flex flex-column align-items-center"
+            >
+              <i className="bi bi-person-circle fs-4"></i>
+              <div className="d-flex align-items-center small d-none d-lg-block">
+                Tu <i className="bi bi-chevron-down ms-1"></i>
               </div>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item>Il tuo profilo</Dropdown.Item>
+              <Dropdown.Item>Impostazioni</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item>Esci</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown className="text-center mx-3 d-none d-md-block">
+            <Dropdown.Toggle
+              variant="light"
+              className="border-0 bg-transparent d-flex flex-column align-items-center"
+            >
+              <i className="bi bi-grid fs-4"></i>
+              <div className="d-flex align-items-center small d-none d-lg-block">
+                Per le aziende <i className="bi bi-chevron-down ms-1"></i>
+              </div>
+            </Dropdown.Toggle>
+          </Dropdown>
+          <Nav.Item className="text-center mx-3 d-flex flex-column align-items-center d-none d-md-block">
+            <Nav.Link className="d-flex flex-column align-items-center">
+              <i className="bi bi-star-fill text-warning fs-4"></i>
+              <div className="small d-none d-lg-block">Prova Premium</div>
             </Nav.Link>
-
-            <Nav.Link>
-              <i class="bi bi-list h4"></i>
-            </Nav.Link>
-          </Col>
-        </Row>
+          </Nav.Item>
+        </Nav>
       </Container>
     </Navbar>
   );

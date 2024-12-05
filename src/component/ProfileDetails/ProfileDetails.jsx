@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "./ProfileDetails.css";
+import { Link } from "react-router-dom";
 
 export default function ProfileDetails({ data }) {
   return (
@@ -26,9 +27,9 @@ export default function ProfileDetails({ data }) {
           </Card.Subtitle>
           <Card.Text>
             {data.area} -
-            <a href="/" className="mx-1 text-decoration-none">
+            <Link className="mx-1 text-decoration-none">
               Informazioni di contatto
-            </a>
+            </Link>
           </Card.Text>
           <Button className="mb-2">Disponibile per</Button>
           <Button variant="outline-primary" className="mb-2 mx-2">
