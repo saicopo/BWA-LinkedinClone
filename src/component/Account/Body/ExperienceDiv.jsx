@@ -148,15 +148,15 @@ export default function ExperienceDiv({ experience, id }) {
         </Modal.Footer>
       </Modal>
 
-      <Container className="container-experience shadow mb-2">
         <Button type="button" className="add-experience" onClick={handleShow}>
           +
         </Button>
+      <Container className="container-experience shadow mb-2">
         <Row>
           <Col className="mt-4">
             <h4>{experience.company}</h4>
             <p>
-              {formatDate(experience.startDate)} -{" "}
+              {formatDate(experience.startDate)} -
               {formatDate(experience.endDate)}
             </p>
             <p>{experience.area}</p>
