@@ -4,9 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import ExperienceDiv from "./ExperienceDiv";
 
-const API_TOKEN =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRlMDcyNTc0Yjc3ZDAwMTVkM2YwNzYiLCJpYXQiOjE3MzMxNjY4ODUsImV4cCI6MTczNDM3NjQ4NX0.yf8-j8u0AMCJk8jZ-xX7c-0WFOxGtDdFZu2TX6o6rjk";
-
 const Body = ({ id }) => {
   const [experiences, setExperience] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,28 +21,63 @@ const Body = ({ id }) => {
     area: "",
   });
 
+  const users = [
+    {
+      name: "Jessica",
+      token:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRmNTJjMTIyY2EwMzAwMTU0ODg0YjEiLCJpYXQiOjE3MzMyNTE3NzcsImV4cCI6MTczNDQ2MTM3N30.2ILN61xsYSCkFQcH7evxZxTq8xCfbieJfh2FBphi8NQ",
+      id: "674f52c122ca0300154884b1",
+    },
+    {
+      name: "Carmine",
+      token:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUyMDk2ZjcyNDZhZDAwMTVjNTE1OTMiLCJpYXQiOjE3MzM0Mjk3MDgsImV4cCI6MTczNDYzOTMwOH0.1tYavcCRvJyrvhEHVAWTA4NKhDhmPjZupeZDNhZ0RQE",
+      id: "6752096f7246ad0015c51593",
+    },
+    {
+      name: "Andrei",
+      token:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRlMDcyNTc0Yjc3ZDAwMTVkM2YwNzYiLCJpYXQiOjE3MzMxNjY4ODUsImV4cCI6MTczNDM3NjQ4NX0.yf8-j8u0AMCJk8jZ-xX7c-0WFOxGtDdFZu2TX6o6rjk",
+      id: "674e072574b77d0015d3f076",
+    },
+    {
+      name: "Gabriele",
+      token:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRmNTM4MTIyY2EwMzAwMTU0ODg0YjIiLCJpYXQiOjE3MzMyNTE5NjksImV4cCI6MTczNDQ2MTU2OX0.9Ip7DU9cVmjVt3nUjU88T3YB17fcUyo2a06NCXHOVlw",
+      id: "674f538122ca0300154884b2",
+    },
+  ];
+
+  let apiToken = "";
+  for (let i = 0; i < users.length; i++) {
+    if (id === users[i].id) {
+      apiToken = users[i].token;
+      console.log(apiToken);
+    }
+  }
+
+  const getExperience = async () => {
+    try {
+      const response = await fetch(
+        ` https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
+        {
+          headers: {
+            Authorization: apiToken,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = await response.json();
+
+      setExperience(data);
+    } catch (error) {
+      console.error("Errore ", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const getExperience = async () => {
-      try {
-        const response = await fetch(
-          ` https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
-          {
-            headers: {
-              Authorization: API_TOKEN,
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        const data = await response.json();
-
-        setExperience(data);
-      } catch (error) {
-        console.error("Errore ", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     getExperience(); // Chiamata alla funzione per recuperare gli utenti
   }, []);
 
@@ -54,13 +86,13 @@ const Body = ({ id }) => {
   }
 
   function postExperience() {
-    console.log(id)
+    console.log(id);
     fetch(
       `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
       {
         method: "POST",
         headers: {
-          Authorization: API_TOKEN,
+          Authorization: apiToken,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(inputs),
@@ -89,7 +121,7 @@ const Body = ({ id }) => {
   }
 
   function handleSubmit(e) {
-    console.log(e)
+    e.preventDefault();
     postExperience();
     setShow(false);
     setInputs({

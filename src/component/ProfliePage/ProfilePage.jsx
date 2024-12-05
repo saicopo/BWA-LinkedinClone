@@ -7,7 +7,7 @@ import Body from "../Account/Body/Body";
 
 const API_PROFILE_URL = "https://striveschool-api.herokuapp.com/api/profile/";
 const API_TOKEN =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRmNTM4MTIyY2EwMzAwMTU0ODg0YjIiLCJpYXQiOjE3MzMyNTE5NjksImV4cCI6MTczNDQ2MTU2OX0.9Ip7DU9cVmjVt3nUjU88T3YB17fcUyo2a06NCXHOVlw";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZjRiZTcyNDZhZDAwMTVjNTE1NzYiLCJpYXQiOjE3MzM0MjQzMTgsImV4cCI6MTczNDYzMzkxOH0.FgQRbzIKWv_pm2t9v9nus4hRdQgxTsCFHLOOUN994Hs";
 
 export default function ProfilePage() {
   const params = useParams();
