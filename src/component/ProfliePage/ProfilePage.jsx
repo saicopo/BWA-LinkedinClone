@@ -40,7 +40,7 @@ export default function ProfilePage() {
         <Row>
           <Col lg={9} md={8}>
             <ProfileDetails data={profileDetails} />
-            <h5 className="mx-2 my-3 mt-5">Esperienze Lavorative</h5>
+            <h5 className="mx-2 my-3">Esperienze Lavorative</h5>
             <Body id={params.id} />
           </Col>
           <Col lg={3} md={4} className="d-none d-md-block">
