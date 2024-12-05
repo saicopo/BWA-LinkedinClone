@@ -1,4 +1,3 @@
-// Importo gli hooks utilizzati
 import React, { useEffect, useState } from "react";
 
 // Importo i stili di react-bootstrap
@@ -16,7 +15,7 @@ const Body = ({ id }) => {
     const getExperience = async () => {
       try {
         const response = await fetch(
-          `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
+         ` https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
           {
             headers: {
               Authorization: Token,

@@ -11,7 +11,7 @@ import "./NavBar2.css";
 
 export default function NavBar2() {
   return (
-    <Navbar bg="light" className="fixed-top">
+    <Navbar bg="light">
       <Container>
         <Navbar.Brand href="/">
           <i className="bi bi-linkedin text-primary fs-1"></i>

@@ -5,7 +5,7 @@ import "./ProfileDetails.css";
 export default function ProfileDetails({ data }) {
   return (
     <>
-      <Card className="shadow profile-card">
+      <Card className="shadow profile-card mt-5">
         <Card.Img
           variant="top"
           src="https://i.pinimg.com/originals/2d/e8/82/2de882cd4f3992ada3d609e3a183f7a4.jpg"
