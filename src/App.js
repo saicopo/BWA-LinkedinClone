@@ -3,7 +3,7 @@ import "./App.css";
 
 // Importo lo stile di react-bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Navbar from "./component/Navbar/Navbar"
 // Importo il BrowserRoute da react-router-dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
