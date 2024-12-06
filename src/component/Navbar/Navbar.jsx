@@ -7,7 +7,7 @@ import {
   FormControl,
   Container,
 } from "react-bootstrap";
-import "./NavBar.css";
+import "./Navbar.css";
 
 export default function NavBar() {
   return (

@@ -10,12 +10,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UsersPage from "./component/UsersPage/UsersPage";
 import Footer from "./component/Footer/Footer";
 import ProfilePage from "./component/ProfilePage/ProfilePage";
-import NavBar from "./component/Navbar/NavBar";
+import Navbar from "./component/Navbar/Navbar";
 
 function App() {
   return (
     <Router>
-      <NavBar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<UsersPage />} />
         <Route path="/profile/:id" element={<ProfilePage />} />
