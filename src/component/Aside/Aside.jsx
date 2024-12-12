@@ -5,7 +5,7 @@ const Aside = () => {
   const [users, setUsers] = useState([]);
   const [showAll, setShowAll] = useState(false);
   const [loading, setLoading] = useState(true);
-
+ const randomAvatar = "https://i.pravatar.cc/300"
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -63,7 +63,7 @@ const Aside = () => {
                   className="d-flex justify-content-center align-items-center"
                 >
                   <Card.Img
-                    src={user.image}
+                    src={randomAvatar}
                     alt={`${user.name} ${user.surname}`}
                     style={{
                       width: "50px",
